@@ -7,28 +7,30 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <div class="announce-strip">
     <div class="announce-track">
       <span>Free shipping on orders over $50</span><span class="dot">·</span>
-      <span>New: Adaptogen Collection now available</span><span class="dot">·</span>
-      <span>Explore our Yoga Ritual Bundle &mdash; save 20%</span><span class="dot">·</span>
+      <span>New: Adaptogen Collection — 茶</span><span class="dot">·</span>
+      <span>Yoga Ritual Bundle — save 20%</span><span class="dot">·</span>
+      <span>Organic · Hand-blended · Pacific Northwest</span><span class="dot">·</span>
       <span>Free shipping on orders over $50</span><span class="dot">·</span>
-      <span>New: Adaptogen Collection now available</span><span class="dot">·</span>
-      <span>Explore our Yoga Ritual Bundle &mdash; save 20%</span>
+      <span>New: Adaptogen Collection — 茶</span><span class="dot">·</span>
+      <span>Yoga Ritual Bundle — save 20%</span><span class="dot">·</span>
+      <span>Organic · Hand-blended · Pacific Northwest</span><span class="dot">·</span>
     </div>
   </div>
 
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">Prana Tea</span></a>
+      <a href="index.html" class="logo"><span class="logo-icon">茶</span> Prana Tea</a>
       <nav class="main-nav" id="mainNav">
         <div class="nav-item has-mega">
-          <button class="nav-link mega-trigger" id="megaBtn">All Teas <span class="chevron">﹢</span></button>
+          <button class="nav-link mega-trigger" id="megaBtn" aria-expanded="false">All Teas <span class="chevron">﹢</span></button>
           <div class="mega-menu" id="megaMenu">
             <div class="mega-inner">
               <div class="mega-col">
@@ -49,8 +51,8 @@
               <div class="mega-featured">
                 <p class="mega-feat-label">Featured Blend</p>
                 <div class="mega-feat-card">
-                  <div class="mega-feat-img feat-thirdeye"></div>
-                  <div class="mega-feat-info"><strong>Third Eye Clarity</strong><p>Lion's mane + peppermint for deep focus</p><a href="#third-eye" class="mega-feat-cta">Shop Now →</a></div>
+                  <div class="mega-feat-img feat-matcha"></div>
+                  <div class="mega-feat-info"><strong>Jade Tranquility</strong><p>Ceremonial green tea with lemon verbena</p><a href="#jade-tranquility" class="mega-feat-cta">Shop Now →</a></div>
                 </div>
               </div>
             </div>
@@ -58,7 +60,7 @@
         </div>
         <a href="index.html#bestsellers" class="nav-link">Best Sellers</a>
         <a href="store.html" class="nav-link active">Shop All</a>
-        <a href="store.html#bundles" class="nav-link">Bundles</a>
+        <a href="#bundles" class="nav-link">Bundles</a>
         <a href="about.html" class="nav-link">Our Story</a>
       </nav>
       <div class="header-actions">
@@ -70,20 +72,18 @@
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="store.html">All Teas</a><a href="index.html#bestsellers">Best Sellers</a><a href="store.html#bundles">Bundles</a><a href="about.html">Our Story</a>
+      <a href="store.html">All Teas</a><a href="index.html#bestsellers">Best Sellers</a><a href="#bundles">Bundles</a><a href="about.html">Our Story</a>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-content">
-      <p class="eyebrow">The Collection</p>
-      <h1>All Blends</h1>
-      <p>Ten yoga-inspired herbal teas. One for every asana, every season, every part of you.</p>
+      <span class="eyebrow light">全商品 · All Blends</span>
+      <h1>The Collection</h1>
+      <p>Ten yoga-inspired herbal teas. Each one crafted for a specific asana, season, and state of being.</p>
     </div>
   </section>
 
-  <!-- FILTER TABS -->
   <div class="filter-bar" id="filterBar">
     <div class="container">
       <div class="filter-tabs">
@@ -97,200 +97,92 @@
     </div>
   </div>
 
-  <!-- ALL 10 PRODUCTS -->
   <section class="section store-grid-section">
     <div class="container">
       <div class="store-product-grid" id="productGrid">
 
-        <!-- 1. Sunrise Flow -->
-        <div class="store-card" id="sunrise-flow" data-type="spiced" data-practice="morning">
-          <div class="store-card-img"><div class="tea-vis tv-sunrise"></div><div class="overlay"><span>Quick View</span></div><span class="badge-new">Best Seller</span></div>
-          <div class="store-card-info">
-            <span class="ptype">Spiced · Morning</span>
-            <h3>Sunrise Flow</h3>
-            <p>Tulsi, ginger &amp; cardamom to ignite your morning practice.</p>
-            <div class="store-card-bottom">
-              <span class="price">$18.00</span>
-              <button class="add-btn" onclick="addToCart('Sunrise Flow', 18.00, 'sunrise')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="sunrise-flow" data-type="spiced">
+          <div class="store-card-img"><div class="tea-vis tv-sunrise"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new">Best Seller</span></div>
+          <div class="store-card-info"><span class="ptype">Spiced · Morning</span><h3>Sunrise Flow</h3><p>Tulsi, ginger &amp; cardamom to ignite your morning practice.</p><div class="store-card-bottom"><span class="price">$18.00</span><button class="add-btn" onclick="addToCart('Sunrise Flow',18.00,'sunrise')">+ Add</button></div></div>
         </div>
 
-        <!-- 2. Deep Savasana -->
-        <div class="store-card" id="deep-savasana" data-type="herbal" data-practice="evening">
-          <div class="store-card-img"><div class="tea-vis tv-savasana"></div><div class="overlay"><span>Quick View</span></div><span class="badge-new">Fan Favorite</span></div>
-          <div class="store-card-info">
-            <span class="ptype">Herbal · Evening</span>
-            <h3>Deep Savasana</h3>
-            <p>Lavender, chamomile &amp; passionflower for total release.</p>
-            <div class="store-card-bottom">
-              <span class="price">$18.00</span>
-              <button class="add-btn" onclick="addToCart('Deep Savasana', 18.00, 'savasana')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="deep-savasana" data-type="herbal">
+          <div class="store-card-img"><div class="tea-vis tv-savasana"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new">Fan Favorite</span></div>
+          <div class="store-card-info"><span class="ptype">Herbal · Evening</span><h3>Deep Savasana</h3><p>Lavender, chamomile &amp; passionflower for total release.</p><div class="store-card-bottom"><span class="price">$18.00</span><button class="add-btn" onclick="addToCart('Deep Savasana',18.00,'savasana')">+ Add</button></div></div>
         </div>
 
-        <!-- 3. Third Eye Clarity -->
-        <div class="store-card" id="third-eye" data-type="adaptogen" data-practice="meditation">
-          <div class="store-card-img"><div class="tea-vis tv-thirdeye"></div><div class="overlay"><span>Quick View</span></div><span class="badge-new badge-blue">New</span></div>
-          <div class="store-card-info">
-            <span class="ptype">Adaptogen · Focus</span>
-            <h3>Third Eye Clarity</h3>
-            <p>Lion's mane, peppermint &amp; rosemary for deep focus.</p>
-            <div class="store-card-bottom">
-              <span class="price">$22.00</span>
-              <button class="add-btn" onclick="addToCart('Third Eye Clarity', 22.00, 'thirdeye')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="third-eye" data-type="adaptogen">
+          <div class="store-card-img"><div class="tea-vis tv-thirdeye"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new badge-rust">New</span></div>
+          <div class="store-card-info"><span class="ptype">Adaptogen · Focus</span><h3>Third Eye Clarity</h3><p>Lion's mane, peppermint &amp; rosemary for deep focus.</p><div class="store-card-bottom"><span class="price">$22.00</span><button class="add-btn" onclick="addToCart('Third Eye Clarity',22.00,'thirdeye')">+ Add</button></div></div>
         </div>
 
-        <!-- 4. Heart Chakra -->
-        <div class="store-card" id="heart-chakra" data-type="floral" data-practice="evening">
-          <div class="store-card-img"><div class="tea-vis tv-heart"></div><div class="overlay"><span>Quick View</span></div><span class="badge-new">Staff Pick</span></div>
-          <div class="store-card-info">
-            <span class="ptype">Floral · Heart</span>
-            <h3>Heart Chakra</h3>
-            <p>Rose, hawthorn &amp; hibiscus to open the heart center.</p>
-            <div class="store-card-bottom">
-              <span class="price">$20.00</span>
-              <button class="add-btn" onclick="addToCart('Heart Chakra', 20.00, 'heart')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="heart-chakra" data-type="floral">
+          <div class="store-card-img"><div class="tea-vis tv-heart"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new">Staff Pick</span></div>
+          <div class="store-card-info"><span class="ptype">Floral · Heart</span><h3>Heart Chakra</h3><p>Rose, hawthorn &amp; hibiscus to open the heart center.</p><div class="store-card-bottom"><span class="price">$20.00</span><button class="add-btn" onclick="addToCart('Heart Chakra',20.00,'heart')">+ Add</button></div></div>
         </div>
 
-        <!-- 5. Root Grounding -->
-        <div class="store-card" id="root-grounding" data-type="herbal" data-practice="morning">
-          <div class="store-card-img"><div class="tea-vis tv-root"></div><div class="overlay"><span>Quick View</span></div></div>
-          <div class="store-card-info">
-            <span class="ptype">Herbal · Grounding</span>
-            <h3>Root Grounding</h3>
-            <p>Ashwagandha, dandelion root &amp; burdock for deep earth energy.</p>
-            <div class="store-card-bottom">
-              <span class="price">$20.00</span>
-              <button class="add-btn" onclick="addToCart('Root Grounding', 20.00, 'root')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="root-grounding" data-type="herbal">
+          <div class="store-card-img"><div class="tea-vis tv-root"></div><div class="overlay"><span>View Blend</span></div></div>
+          <div class="store-card-info"><span class="ptype">Herbal · Grounding</span><h3>Root Grounding</h3><p>Ashwagandha, dandelion root &amp; burdock for deep earth energy.</p><div class="store-card-bottom"><span class="price">$20.00</span><button class="add-btn" onclick="addToCart('Root Grounding',20.00,'root')">+ Add</button></div></div>
         </div>
 
-        <!-- 6. Reishi Rest -->
-        <div class="store-card" id="reishi-rest" data-type="adaptogen" data-practice="evening">
-          <div class="store-card-img"><div class="tea-vis tv-reishi"></div><div class="overlay"><span>Quick View</span></div><span class="badge-new badge-blue">New</span></div>
-          <div class="store-card-info">
-            <span class="ptype">Adaptogen · Evening</span>
-            <h3>Reishi Rest</h3>
-            <p>Reishi mushroom, holy basil &amp; lemon balm for deep recovery.</p>
-            <div class="store-card-bottom">
-              <span class="price">$24.00</span>
-              <button class="add-btn" onclick="addToCart('Reishi Rest', 24.00, 'reishi')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="reishi-rest" data-type="adaptogen">
+          <div class="store-card-img"><div class="tea-vis tv-reishi"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new badge-rust">New</span></div>
+          <div class="store-card-info"><span class="ptype">Adaptogen · Evening</span><h3>Reishi Rest</h3><p>Reishi mushroom, holy basil &amp; lemon balm for deep recovery.</p><div class="store-card-bottom"><span class="price">$24.00</span><button class="add-btn" onclick="addToCart('Reishi Rest',24.00,'reishi')">+ Add</button></div></div>
         </div>
 
-        <!-- 7. Jade Tranquility -->
-        <div class="store-card" id="jade-tranquility" data-type="green" data-practice="meditation">
-          <div class="store-card-img"><div class="tea-vis tv-jade"></div><div class="overlay"><span>Quick View</span></div></div>
-          <div class="store-card-info">
-            <span class="ptype">Green · Meditation</span>
-            <h3>Jade Tranquility</h3>
-            <p>Ceremonial green tea blended with lemon verbena &amp; mint.</p>
-            <div class="store-card-bottom">
-              <span class="price">$19.00</span>
-              <button class="add-btn" onclick="addToCart('Jade Tranquility', 19.00, 'jade')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="jade-tranquility" data-type="green">
+          <div class="store-card-img"><div class="tea-vis tv-jade"></div><div class="overlay"><span>View Blend</span></div><span class="badge-new">Staff Pick</span></div>
+          <div class="store-card-info"><span class="ptype">Green · Meditation</span><h3>Jade Tranquility</h3><p>Ceremonial green tea with lemon verbena &amp; mint.</p><div class="store-card-bottom"><span class="price">$19.00</span><button class="add-btn" onclick="addToCart('Jade Tranquility',19.00,'jade')">+ Add</button></div></div>
         </div>
 
-        <!-- 8. Sencha Flow -->
-        <div class="store-card" id="sencha-flow" data-type="green" data-practice="morning">
-          <div class="store-card-img"><div class="tea-vis tv-sencha"></div><div class="overlay"><span>Quick View</span></div></div>
-          <div class="store-card-info">
-            <span class="ptype">Green · Morning</span>
-            <h3>Sencha Flow</h3>
-            <p>Japanese sencha with jasmine &amp; ginger — clean, bright &amp; alive.</p>
-            <div class="store-card-bottom">
-              <span class="price">$19.00</span>
-              <button class="add-btn" onclick="addToCart('Sencha Flow', 19.00, 'sencha')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="sencha-flow" data-type="green">
+          <div class="store-card-img"><div class="tea-vis tv-sencha"></div><div class="overlay"><span>View Blend</span></div></div>
+          <div class="store-card-info"><span class="ptype">Green · Morning</span><h3>Sencha Flow</h3><p>Japanese sencha with jasmine &amp; ginger — clean, bright &amp; alive.</p><div class="store-card-bottom"><span class="price">$19.00</span><button class="add-btn" onclick="addToCart('Sencha Flow',19.00,'sencha')">+ Add</button></div></div>
         </div>
 
-        <!-- 9. Petal Meditation -->
-        <div class="store-card" id="petal-meditation" data-type="floral" data-practice="meditation">
-          <div class="store-card-img"><div class="tea-vis tv-petal"></div><div class="overlay"><span>Quick View</span></div></div>
-          <div class="store-card-info">
-            <span class="ptype">Floral · Meditation</span>
-            <h3>Petal Meditation</h3>
-            <p>Blue butterfly pea, lavender &amp; chamomile — a color-shifting calm.</p>
-            <div class="store-card-bottom">
-              <span class="price">$21.00</span>
-              <button class="add-btn" onclick="addToCart('Petal Meditation', 21.00, 'petal')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="petal-meditation" data-type="floral">
+          <div class="store-card-img"><div class="tea-vis tv-petal"></div><div class="overlay"><span>View Blend</span></div></div>
+          <div class="store-card-info"><span class="ptype">Floral · Meditation</span><h3>Petal Meditation</h3><p>Blue butterfly pea, lavender &amp; chamomile — a color-shifting calm.</p><div class="store-card-bottom"><span class="price">$21.00</span><button class="add-btn" onclick="addToCart('Petal Meditation',21.00,'petal')">+ Add</button></div></div>
         </div>
 
-        <!-- 10. Fire Within -->
-        <div class="store-card" id="fire-within" data-type="spiced herbal" data-practice="recovery">
-          <div class="store-card-img"><div class="tea-vis tv-fire"></div><div class="overlay"><span>Quick View</span></div></div>
-          <div class="store-card-info">
-            <span class="ptype">Spiced · Recovery</span>
-            <h3>Fire Within</h3>
-            <p>Turmeric, black pepper &amp; cinnamon — anti-inflammatory &amp; warming.</p>
-            <div class="store-card-bottom">
-              <span class="price">$20.00</span>
-              <button class="add-btn" onclick="addToCart('Fire Within', 20.00, 'fire')">+ Add</button>
-            </div>
-          </div>
+        <div class="store-card" id="fire-within" data-type="spiced">
+          <div class="store-card-img"><div class="tea-vis tv-fire"></div><div class="overlay"><span>View Blend</span></div></div>
+          <div class="store-card-info"><span class="ptype">Spiced · Recovery</span><h3>Fire Within</h3><p>Turmeric, black pepper &amp; cinnamon — anti-inflammatory &amp; warming.</p><div class="store-card-bottom"><span class="price">$20.00</span><button class="add-btn" onclick="addToCart('Fire Within',20.00,'fire')">+ Add</button></div></div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- BUNDLE SECTION -->
+  <!-- BUNDLES -->
   <section class="section bundle-section" id="bundles">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Ritual Bundles</p>
+        <span class="eyebrow">ギフト · Ritual Bundles</span>
         <h2>Gift the Practice</h2>
       </div>
       <div class="bundle-grid">
         <div class="bundle-card">
           <div class="bundle-visual bv-starter"></div>
-          <div class="bundle-info">
-            <h3>Starter Ritual</h3>
-            <p>3 blends of your choice + a bamboo steeper.</p>
-            <div class="bundle-bottom"><span class="price">$52.00</span><button class="add-btn" onclick="addToCart('Starter Ritual Bundle', 52.00, 'bundle1')">+ Add</button></div>
-          </div>
+          <div class="bundle-info"><h3>Starter Ritual</h3><p>3 blends of your choice + a bamboo steeper.</p><div class="bundle-bottom"><span class="price">$52.00</span><button class="add-btn" onclick="addToCart('Starter Ritual Bundle',52.00,'bundle1')">+ Add</button></div></div>
         </div>
         <div class="bundle-card bundle-featured">
           <span class="bundle-badge">Most Popular</span>
           <div class="bundle-visual bv-full"></div>
-          <div class="bundle-info">
-            <h3>Complete Yoga Set</h3>
-            <p>All 10 blends in a beautiful gift box. Save 20%.</p>
-            <div class="bundle-bottom"><span class="price">$158.00 <s>$198</s></span><button class="add-btn" onclick="addToCart('Complete Yoga Set Bundle', 158.00, 'bundle2')">+ Add</button></div>
-          </div>
+          <div class="bundle-info"><h3>Complete Yoga Set</h3><p>All 10 blends in a beautiful gift box. Save 20%.</p><div class="bundle-bottom"><span class="price">$158.00 <s>$198</s></span><button class="add-btn" onclick="addToCart('Complete Yoga Set Bundle',158.00,'bundle2')">+ Add</button></div></div>
         </div>
         <div class="bundle-card">
           <div class="bundle-visual bv-chakra"></div>
-          <div class="bundle-info">
-            <h3>Chakra Collection</h3>
-            <p>Sunrise Flow, Heart Chakra, Third Eye &amp; Deep Savasana.</p>
-            <div class="bundle-bottom"><span class="price">$72.00</span><button class="add-btn" onclick="addToCart('Chakra Collection Bundle', 72.00, 'bundle3')">+ Add</button></div>
-          </div>
+          <div class="bundle-info"><h3>Chakra Collection</h3><p>Sunrise Flow, Heart Chakra, Third Eye &amp; Deep Savasana.</p><div class="bundle-bottom"><span class="price">$72.00</span><button class="add-btn" onclick="addToCart('Chakra Collection Bundle',72.00,'bundle3')">+ Add</button></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="footer-logo"><span class="logo-mark">✦</span> Prana Tea</div>
-        <p>Small-batch herbal blends for the mindful life.<br/>Brewed with love in the Pacific Northwest.</p>
-        <div class="footer-socials"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
-      </div>
+      <div class="footer-brand"><div class="footer-logo"><span class="logo-icon">茶</span> Prana Tea</div><p>Small-batch herbal blends for the mindful life. Brewed with love in Portland, Oregon.</p><div class="footer-socials"><a href="#">Instagram</a><a href="#">Pinterest</a></div></div>
       <div class="footer-col"><h5>Shop</h5><a href="#herbal">Herbal Teas</a><a href="#adaptogen">Adaptogens</a><a href="#green">Green Teas</a><a href="#floral">Floral Teas</a><a href="#bundles">Bundles</a></div>
       <div class="footer-col"><h5>Company</h5><a href="about.html">Our Story</a><a href="#">Sustainability</a><a href="#">Wholesale</a><a href="#">Contact</a></div>
       <div class="footer-col footer-newsletter"><h5>Newsletter</h5><p>Tea wisdom &amp; new blends straight to your inbox.</p><div class="newsletter-form"><input type="email" placeholder="your@email.com" /><button>→</button></div></div>
@@ -304,7 +196,7 @@
     <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty.<br/>Add a blend to begin your ritual.</p></div>
     <div class="cart-footer" id="cartFooter" style="display:none;">
       <div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
-      <button class="btn btn-dark full-width" onclick="checkout()">Proceed to Checkout</button>
+      <button class="btn btn-ink full-width" onclick="checkout()">Proceed to Checkout</button>
       <p class="cart-note">Free shipping over $50 · Secure checkout</p>
     </div>
   </aside>
@@ -313,7 +205,6 @@
   <script src="js/main.js"></script>
   <script src="js/cart.js"></script>
   <script>
-    // Filter tabs
     const tabs = document.querySelectorAll('.filter-tab');
     const cards = document.querySelectorAll('.store-card');
     tabs.forEach(tab => {
