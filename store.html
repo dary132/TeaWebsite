@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Prana Tea</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Prana Tea</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="store.html" class="nav-link active">Shop</a>
+        <a href="store.html" class="nav-cta cart-icon-btn">
+          🛒 Cart <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="store.html">Shop</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="mandala mandala-sm"></div>
+    <div class="page-hero-content">
+      <p class="hero-eyebrow">The Collection</p>
+      <h1>Herbal Blends</h1>
+      <p>Four blends. Infinite possibilities. Each one crafted for a moment in your practice.</p>
+    </div>
+  </section>
+
+  <!-- STORE GRID -->
+  <section class="section store-section">
+    <div class="container">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-detail-card" id="sunrise-flow">
+        <div class="product-detail-visual">
+          <div class="tea-illustration large sunrise"></div>
+          <div class="product-badges">
+            <span class="badge">Best Seller</span>
+            <span class="badge">Energizing</span>
+          </div>
+        </div>
+        <div class="product-detail-info">
+          <p class="chakra-label">☀️ Solar Plexus Chakra</p>
+          <h2>Sunrise Flow</h2>
+          <div class="product-stars">★★★★★ <span>(42 reviews)</span></div>
+          <p class="product-description">Wake up your prana with this golden, warming blend. Tulsi (holy basil) clears mental fog, ginger sparks your digestive fire, and cardamom adds a subtle sweetness that makes mornings feel sacred. Perfect before or during your morning yoga practice.</p>
+          <div class="product-details-list">
+            <div class="detail-item"><strong>Ingredients:</strong> Organic tulsi, ginger root, cardamom pods, cinnamon, black pepper</div>
+            <div class="detail-item"><strong>Steep:</strong> 5 min · 200°F (93°C)</div>
+            <div class="detail-item"><strong>Size:</strong> 2 oz loose leaf (~20 cups)</div>
+            <div class="detail-item"><strong>Caffeine:</strong> Naturally caffeine-free</div>
+          </div>
+          <div class="product-purchase">
+            <span class="product-price-large">$18.00</span>
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="changeQty('sunrise', -1)">−</button>
+              <span class="qty-display" id="qty-sunrise">1</span>
+              <button class="qty-btn" onclick="changeQty('sunrise', 1)">+</button>
+            </div>
+            <button class="btn btn-primary add-to-cart" onclick="addToCart('Sunrise Flow', 18.00, 'sunrise')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-divider"><div class="lotus-divider">✦ ✦ ✦</div></div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-detail-card reverse" id="deep-savasana">
+        <div class="product-detail-visual">
+          <div class="tea-illustration large savasana"></div>
+          <div class="product-badges">
+            <span class="badge">Fan Favorite</span>
+            <span class="badge">Calming</span>
+          </div>
+        </div>
+        <div class="product-detail-info">
+          <p class="chakra-label">🌙 Crown Chakra</p>
+          <h2>Deep Savasana</h2>
+          <div class="product-stars">★★★★★ <span>(67 reviews)</span></div>
+          <p class="product-description">Surrender fully into your evening. This silky blend of lavender, chamomile, and passionflower signals to your nervous system that it's time to release. A whisper of vanilla rounds it into the most comforting cup you'll ever hold.</p>
+          <div class="product-details-list">
+            <div class="detail-item"><strong>Ingredients:</strong> Organic lavender, chamomile flowers, passionflower, valerian root, vanilla bean</div>
+            <div class="detail-item"><strong>Steep:</strong> 4 min · 195°F (90°C)</div>
+            <div class="detail-item"><strong>Size:</strong> 2 oz loose leaf (~20 cups)</div>
+            <div class="detail-item"><strong>Caffeine:</strong> Naturally caffeine-free</div>
+          </div>
+          <div class="product-purchase">
+            <span class="product-price-large">$18.00</span>
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="changeQty('savasana', -1)">−</button>
+              <span class="qty-display" id="qty-savasana">1</span>
+              <button class="qty-btn" onclick="changeQty('savasana', 1)">+</button>
+            </div>
+            <button class="btn btn-primary add-to-cart" onclick="addToCart('Deep Savasana', 18.00, 'savasana')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-divider"><div class="lotus-divider">✦ ✦ ✦</div></div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-detail-card" id="third-eye">
+        <div class="product-detail-visual">
+          <div class="tea-illustration large thirdeye"></div>
+          <div class="product-badges">
+            <span class="badge">New</span>
+            <span class="badge">Focus</span>
+          </div>
+        </div>
+        <div class="product-detail-info">
+          <p class="chakra-label">🔮 Third Eye Chakra</p>
+          <h2>Third Eye Clarity</h2>
+          <div class="product-stars">★★★★☆ <span>(28 reviews)</span></div>
+          <p class="product-description">Cut through the noise and drop into presence. Peppermint sharpens the mind, rosemary activates memory and concentration, and our signature lion's mane mushroom powder provides sustained cognitive support without any jitteriness. Ideal for meditation and pranayama.</p>
+          <div class="product-details-list">
+            <div class="detail-item"><strong>Ingredients:</strong> Organic peppermint, rosemary, lion's mane mushroom, ginkgo leaf, lemon balm</div>
+            <div class="detail-item"><strong>Steep:</strong> 5 min · 205°F (96°C)</div>
+            <div class="detail-item"><strong>Size:</strong> 2 oz loose leaf (~20 cups)</div>
+            <div class="detail-item"><strong>Caffeine:</strong> Naturally caffeine-free</div>
+          </div>
+          <div class="product-purchase">
+            <span class="product-price-large">$22.00</span>
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="changeQty('thirdeye', -1)">−</button>
+              <span class="qty-display" id="qty-thirdeye">1</span>
+              <button class="qty-btn" onclick="changeQty('thirdeye', 1)">+</button>
+            </div>
+            <button class="btn btn-primary add-to-cart" onclick="addToCart('Third Eye Clarity', 22.00, 'thirdeye')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-divider"><div class="lotus-divider">✦ ✦ ✦</div></div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-detail-card reverse" id="heart-chakra">
+        <div class="product-detail-visual">
+          <div class="tea-illustration large heart"></div>
+          <div class="product-badges">
+            <span class="badge">Staff Pick</span>
+            <span class="badge">Heart-Opening</span>
+          </div>
+        </div>
+        <div class="product-detail-info">
+          <p class="chakra-label">💚 Heart Chakra</p>
+          <h2>Heart Chakra</h2>
+          <div class="product-stars">★★★★★ <span>(55 reviews)</span></div>
+          <p class="product-description">A floral, tart, deeply beautiful blend designed to soften the armor around your heart. Rose petals carry the energy of self-love, hawthorn berry strengthens the physical heart, and hibiscus brings a ruby-red tartness that lights you up from the inside.</p>
+          <div class="product-details-list">
+            <div class="detail-item"><strong>Ingredients:</strong> Organic rose petals, hawthorn berry, hibiscus flowers, rose hips, schisandra berry</div>
+            <div class="detail-item"><strong>Steep:</strong> 5 min · 200°F (93°C)</div>
+            <div class="detail-item"><strong>Size:</strong> 2 oz loose leaf (~20 cups)</div>
+            <div class="detail-item"><strong>Caffeine:</strong> Naturally caffeine-free</div>
+          </div>
+          <div class="product-purchase">
+            <span class="product-price-large">$20.00</span>
+            <div class="qty-selector">
+              <button class="qty-btn" onclick="changeQty('heart', -1)">−</button>
+              <span class="qty-display" id="qty-heart">1</span>
+              <button class="qty-btn" onclick="changeQty('heart', 1)">+</button>
+            </div>
+            <button class="btn btn-primary add-to-cart" onclick="addToCart('Heart Chakra', 20.00, 'heart')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.<br/>Add a blend to begin your ritual.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary full-width" onclick="checkout()">Proceed to Checkout</button>
+      <p class="cart-note">Free shipping on orders over $50 · Secure checkout</p>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Prana Tea</span>
+        <p>Herbal blends for the mindful life.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Explore</h5>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="store.html">Shop</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Prana Tea · All rights reserved · levelsetexpectations.com</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
