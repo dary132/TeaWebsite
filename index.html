@@ -3,176 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prana Tea — Herbal Blends for Body & Soul</title>
+  <title>Prana Tea — Yoga-Inspired Herbal Blends</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ANNOUNCEMENT STRIP -->
+  <div class="announce-strip">
+    <div class="announce-track">
+      <span>Free shipping on orders over $50</span>
+      <span class="dot">·</span>
+      <span>New: Adaptogen Collection now available</span>
+      <span class="dot">·</span>
+      <span>Explore our Yoga Ritual Bundle &mdash; save 20%</span>
+      <span class="dot">·</span>
+      <span>Free shipping on orders over $50</span>
+      <span class="dot">·</span>
+      <span>New: Adaptogen Collection now available</span>
+      <span class="dot">·</span>
+      <span>Explore our Yoga Ritual Bundle &mdash; save 20%</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <a href="index.html" class="logo">
         <span class="logo-mark">✦</span>
         <span class="logo-text">Prana Tea</span>
       </a>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="store.html" class="nav-link">Shop</a>
-        <a href="store.html" class="nav-cta">Shop Now</a>
+
+      <nav class="main-nav" id="mainNav">
+
+        <div class="nav-item has-mega">
+          <button class="nav-link mega-trigger" id="megaBtn">All Teas <span class="chevron">﹢</span></button>
+          <div class="mega-menu" id="megaMenu">
+            <div class="mega-inner">
+              <div class="mega-col">
+                <h4 class="mega-heading">By Type</h4>
+                <a href="store.html#herbal" class="mega-link">
+                  <span class="mega-icon">🌿</span>
+                  <div><strong>Herbal</strong><p>Caffeine-free botanicals</p></div>
+                </a>
+                <a href="store.html#adaptogen" class="mega-link">
+                  <span class="mega-icon">🍄</span>
+                  <div><strong>Adaptogen</strong><p>Mushroom &amp; stress-support</p></div>
+                </a>
+                <a href="store.html#green" class="mega-link">
+                  <span class="mega-icon">🍃</span>
+                  <div><strong>Green Tea</strong><p>Light &amp; antioxidant-rich</p></div>
+                </a>
+                <a href="store.html#floral" class="mega-link">
+                  <span class="mega-icon">🌸</span>
+                  <div><strong>Floral</strong><p>Rose, hibiscus &amp; lavender</p></div>
+                </a>
+                <a href="store.html#spiced" class="mega-link">
+                  <span class="mega-icon">🫚</span>
+                  <div><strong>Spiced</strong><p>Warming &amp; digestive</p></div>
+                </a>
+              </div>
+              <div class="mega-col">
+                <h4 class="mega-heading">By Practice</h4>
+                <a href="store.html#morning" class="mega-link">
+                  <span class="mega-icon">☀️</span>
+                  <div><strong>Morning Practice</strong><p>Wake up with intention</p></div>
+                </a>
+                <a href="store.html#meditation" class="mega-link">
+                  <span class="mega-icon">🧘</span>
+                  <div><strong>Meditation</strong><p>Deepen focus &amp; stillness</p></div>
+                </a>
+                <a href="store.html#evening" class="mega-link">
+                  <span class="mega-icon">🌙</span>
+                  <div><strong>Evening Wind-Down</strong><p>Release &amp; restore</p></div>
+                </a>
+                <a href="store.html#recovery" class="mega-link">
+                  <span class="mega-icon">💧</span>
+                  <div><strong>Recovery</strong><p>Post-practice replenishment</p></div>
+                </a>
+              </div>
+              <div class="mega-featured">
+                <p class="mega-feat-label">Featured Blend</p>
+                <div class="mega-feat-card">
+                  <div class="mega-feat-img feat-thirdeye"></div>
+                  <div class="mega-feat-info">
+                    <strong>Third Eye Clarity</strong>
+                    <p>Lion's mane + peppermint for deep focus</p>
+                    <a href="store.html#third-eye" class="mega-feat-cta">Shop Now →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="store.html#bestsellers" class="nav-link">Best Sellers</a>
+        <a href="store.html" class="nav-link">Shop All</a>
+        <a href="store.html#bundles" class="nav-link">Bundles</a>
+        <a href="about.html" class="nav-link">Our Story</a>
       </nav>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <a href="store.html" class="nav-cta">Shop Now</a>
+      </div>
     </div>
+
     <div class="mobile-nav" id="mobileNav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="store.html">Shop</a>
+      <a href="store.html">All Teas</a>
+      <a href="store.html#bestsellers">Best Sellers</a>
+      <a href="store.html">Shop All</a>
+      <a href="store.html#bundles">Bundles</a>
+      <a href="about.html">Our Story</a>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- SPLIT HERO -->
   <section class="hero">
-    <div class="hero-bg">
-      <div class="mandala mandala-1"></div>
-      <div class="mandala mandala-2"></div>
-      <div class="lotus-petals"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Ancient wisdom. Modern ritual.</p>
-      <h1 class="hero-headline">
-        Breathe.<br/>
-        <em>Steep.</em><br/>
-        Restore.
-      </h1>
-      <p class="hero-sub">Small-batch herbal blends crafted for your practice — from morning salutation to evening surrender.</p>
+    <div class="hero-left">
+      <p class="eyebrow">New Collection · 2026</p>
+      <h1>Rooted in<br/><em>Ancient</em><br/>Wisdom</h1>
+      <p class="hero-sub">Small-batch herbal blends crafted for your yoga practice — from sunrise salutation to evening savasana.</p>
       <div class="hero-actions">
-        <a href="store.html" class="btn btn-primary">Explore Blends</a>
-        <a href="about.html" class="btn btn-ghost">Our Story</a>
+        <a href="store.html" class="btn btn-dark">Explore All Blends</a>
+        <a href="about.html" class="btn btn-ghost-dark">Our Story</a>
       </div>
     </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <div class="hero-right">
+      <div class="hero-product-scene">
+        <div class="tin tin-main tin-thirdeye">
+          <div class="tin-cap"></div>
+          <div class="tin-body-wrap">
+            <span class="tin-name">Third Eye<br/>Clarity</span>
+            <span class="tin-brand">✦ PRANA TEA</span>
+          </div>
+        </div>
+        <div class="tin tin-secondary tin-sunrise">
+          <div class="tin-cap"></div>
+          <div class="tin-body-wrap">
+            <span class="tin-name">Sunrise<br/>Flow</span>
+            <span class="tin-brand">✦ PRANA TEA</span>
+          </div>
+        </div>
+        <div class="scene-scatter">
+          <span class="leaf l1">🌿</span>
+          <span class="leaf l2">✿</span>
+          <span class="leaf l3">🌱</span>
+          <span class="petal p1"></span>
+          <span class="petal p2"></span>
+          <span class="petal p3"></span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PHILOSOPHY STRIP -->
-  <div class="philosophy-strip">
-    <div class="philosophy-strip-track">
-      <span>✦ Organic Herbs</span>
-      <span>✦ Hand-Blended</span>
-      <span>✦ Mindfully Sourced</span>
-      <span>✦ Yoga-Inspired</span>
-      <span>✦ Woman-Owned</span>
-      <span>✦ Small-Batch</span>
-      <span>✦ Pacific Northwest</span>
-      <span>✦ Organic Herbs</span>
-      <span>✦ Hand-Blended</span>
-      <span>✦ Mindfully Sourced</span>
-      <span>✦ Yoga-Inspired</span>
-      <span>✦ Woman-Owned</span>
-      <span>✦ Small-Batch</span>
-      <span>✦ Pacific Northwest</span>
-    </div>
-  </div>
-
-  <!-- FEATURED PRODUCTS (preview) -->
-  <section class="section featured-products">
+  <!-- CATEGORY TILES -->
+  <section class="section cat-section">
     <div class="container">
       <div class="section-header">
-        <p class="section-eyebrow">The Collection</p>
-        <h2 class="section-title">Blends for Every Asana</h2>
+        <p class="eyebrow">Shop by Type</p>
+        <h2>Find Your Blend</h2>
       </div>
-      <div class="product-grid">
-
-        <a href="store.html#sunrise-flow" class="product-card" data-tea="sunrise">
-          <div class="product-img-wrap">
-            <div class="tea-illustration sunrise"></div>
-          </div>
-          <div class="product-info">
-            <h3>Sunrise Flow</h3>
-            <p>Energizing tulsi, ginger & cardamom to ignite your morning practice.</p>
-            <span class="product-price">$18.00</span>
-          </div>
+      <div class="cat-grid">
+        <a href="store.html#herbal" class="cat-tile">
+          <div class="cat-visual cat-v-herbal"></div>
+          <div class="cat-info"><span class="cat-icon">🌿</span><strong>Herbal</strong><p>4 blends</p></div>
         </a>
-
-        <a href="store.html#deep-savasana" class="product-card" data-tea="savasana">
-          <div class="product-img-wrap">
-            <div class="tea-illustration savasana"></div>
-          </div>
-          <div class="product-info">
-            <h3>Deep Savasana</h3>
-            <p>Lavender, chamomile & passionflower for total evening release.</p>
-            <span class="product-price">$18.00</span>
-          </div>
+        <a href="store.html#adaptogen" class="cat-tile">
+          <div class="cat-visual cat-v-adaptogen"></div>
+          <div class="cat-info"><span class="cat-icon">🍄</span><strong>Adaptogen</strong><p>2 blends</p></div>
         </a>
-
-        <a href="store.html#third-eye" class="product-card" data-tea="thirdeye">
-          <div class="product-img-wrap">
-            <div class="tea-illustration thirdeye"></div>
-          </div>
-          <div class="product-info">
-            <h3>Third Eye Clarity</h3>
-            <p>Peppermint, rosemary & lion's mane for deep focus & meditation.</p>
-            <span class="product-price">$22.00</span>
-          </div>
+        <a href="store.html#green" class="cat-tile">
+          <div class="cat-visual cat-v-green"></div>
+          <div class="cat-info"><span class="cat-icon">🍃</span><strong>Green</strong><p>2 blends</p></div>
         </a>
-
-        <a href="store.html#heart-chakra" class="product-card" data-tea="heart">
-          <div class="product-img-wrap">
-            <div class="tea-illustration heart"></div>
-          </div>
-          <div class="product-info">
-            <h3>Heart Chakra</h3>
-            <p>Rose, hawthorn & hibiscus to open and soften the heart center.</p>
-            <span class="product-price">$20.00</span>
-          </div>
+        <a href="store.html#floral" class="cat-tile">
+          <div class="cat-visual cat-v-floral"></div>
+          <div class="cat-info"><span class="cat-icon">🌸</span><strong>Floral</strong><p>2 blends</p></div>
         </a>
-
-      </div>
-      <div class="section-cta">
-        <a href="store.html" class="btn btn-primary">View All Blends</a>
       </div>
     </div>
   </section>
 
-  <!-- RITUAL SECTION -->
+  <!-- BEST SELLERS -->
+  <section class="section products-section" id="bestsellers">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Best Sellers</p>
+        <h2>Most Loved Blends</h2>
+      </div>
+      <div class="product-grid">
+        <a href="store.html#sunrise-flow" class="product-card">
+          <div class="product-img"><div class="tea-vis tv-sunrise"></div><div class="overlay"><span>Quick View</span></div></div>
+          <div class="product-info"><span class="ptype">Spiced · Morning</span><h3>Sunrise Flow</h3><div class="pbottom"><span class="price">$18.00</span><span class="stars">★★★★★</span></div></div>
+        </a>
+        <a href="store.html#deep-savasana" class="product-card">
+          <div class="product-img"><div class="tea-vis tv-savasana"></div><div class="overlay"><span>Quick View</span></div></div>
+          <div class="product-info"><span class="ptype">Herbal · Evening</span><h3>Deep Savasana</h3><div class="pbottom"><span class="price">$18.00</span><span class="stars">★★★★★</span></div></div>
+        </a>
+        <a href="store.html#third-eye" class="product-card">
+          <div class="product-img"><div class="tea-vis tv-thirdeye"></div><div class="overlay"><span>Quick View</span></div></div>
+          <div class="product-info"><span class="ptype">Adaptogen · Focus</span><h3>Third Eye Clarity</h3><div class="pbottom"><span class="price">$22.00</span><span class="stars">★★★★☆</span></div></div>
+        </a>
+        <a href="store.html#heart-chakra" class="product-card">
+          <div class="product-img"><div class="tea-vis tv-heart"></div><div class="overlay"><span>Quick View</span></div></div>
+          <div class="product-info"><span class="ptype">Floral · Heart</span><h3>Heart Chakra</h3><div class="pbottom"><span class="price">$20.00</span><span class="stars">★★★★★</span></div></div>
+        </a>
+      </div>
+      <div class="section-cta"><a href="store.html" class="btn btn-outline-dark">View All 10 Blends</a></div>
+    </div>
+  </section>
+
+  <!-- PROMO SPLIT BANNER -->
+  <section class="promo-split">
+    <div class="promo-half promo-dark">
+      <div class="promo-content">
+        <p class="eyebrow light">New Arrival</p>
+        <h3>Adaptogen<br/>Collection</h3>
+        <p>Mushroom-powered blends for modern stress. Lion's mane, reishi &amp; chaga.</p>
+        <a href="store.html#adaptogen" class="btn btn-cream">Explore →</a>
+      </div>
+    </div>
+    <div class="promo-half promo-light">
+      <div class="promo-content">
+        <p class="eyebrow">Ritual Bundle</p>
+        <h3>The Complete<br/>Yoga Set</h3>
+        <p>All 10 blends in a beautiful gift box. One for every asana.</p>
+        <a href="store.html#bundles" class="btn btn-dark">Shop Bundle →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RITUAL STEPS -->
   <section class="section ritual-section">
-    <div class="ritual-bg-deco"></div>
     <div class="container ritual-inner">
       <div class="ritual-text">
-        <p class="section-eyebrow">The Prana Ritual</p>
-        <h2 class="section-title">Tea as Practice</h2>
-        <p>Every blend is designed to accompany a specific moment on your mat — or off it. We believe the act of brewing tea <em>is</em> the practice: presence, patience, and breath in a cup.</p>
-        <p>Source herbs ethically. Steep with intention. Sip with awareness.</p>
-        <a href="about.html" class="btn btn-outline">Learn Our Philosophy</a>
+        <p class="eyebrow">The Prana Ritual</p>
+        <h2>Tea as Practice</h2>
+        <p>Every blend is designed to accompany a specific moment on your mat — or off it. The act of brewing tea <em>is</em> the practice: presence, patience, breath in a cup.</p>
+        <a href="about.html" class="btn btn-outline-dark" style="margin-top:1.5rem; display:inline-block;">Our Philosophy</a>
       </div>
       <div class="ritual-steps">
-        <div class="step">
-          <div class="step-number">01</div>
-          <h4>Set Your Intention</h4>
-          <p>Choose a blend that matches your energy or where you want to go.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <h4>Heat Mindfully</h4>
-          <p>Bring water to the right temperature. Presence begins before the kettle whistles.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <h4>Steep & Breathe</h4>
-          <p>3–5 minutes. Use this time to breathe, stretch, or simply be.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">04</div>
-          <h4>Receive</h4>
-          <p>Drink slowly. Let the herbs meet you where you are.</p>
-        </div>
+        <div class="step"><span class="step-num">01</span><div><h4>Set Intention</h4><p>Choose a blend aligned with your energy.</p></div></div>
+        <div class="step"><span class="step-num">02</span><div><h4>Heat Mindfully</h4><p>Bring water to temperature with full presence.</p></div></div>
+        <div class="step"><span class="step-num">03</span><div><h4>Steep &amp; Breathe</h4><p>3–5 minutes. Breathe, stretch, simply be.</p></div></div>
+        <div class="step"><span class="step-num">04</span><div><h4>Receive</h4><p>Drink slowly. Let the herbs meet you where you are.</p></div></div>
       </div>
     </div>
   </section>
@@ -180,24 +264,12 @@
   <!-- TESTIMONIALS -->
   <section class="section testimonials-section">
     <div class="container">
-      <p class="section-eyebrow center">Community Love</p>
-      <h2 class="section-title center">From the Shala</h2>
+      <p class="eyebrow center">Community Love</p>
+      <h2 class="center">From the Shala</h2>
       <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Sunrise Flow has completely transformed my morning practice. The tulsi wakes up my mind without the jitteriness of coffee."</p>
-          <cite>— Maya R., Ashtanga teacher</cite>
-        </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"I bring Deep Savasana to every yoga retreat I host. My students ask about it every single time."</p>
-          <cite>— Jordan K., Retreat facilitator</cite>
-        </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Heart Chakra tastes exactly like what opening feels like. I don't know how they did it."</p>
-          <cite>— Priya S., Yin yoga practitioner</cite>
-        </div>
+        <div class="testimonial"><div class="tstars">★★★★★</div><p>"Sunrise Flow has completely transformed my morning practice. The tulsi wakes up my mind without the jitteriness of coffee."</p><cite>— Maya R., Ashtanga teacher</cite></div>
+        <div class="testimonial"><div class="tstars">★★★★★</div><p>"I bring Deep Savasana to every retreat I host. My students ask about it every single time."</p><cite>— Jordan K., Retreat facilitator</cite></div>
+        <div class="testimonial"><div class="tstars">★★★★★</div><p>"Heart Chakra tastes exactly like what opening feels like. I don't know how they did it."</p><cite>— Priya S., Yin yoga practitioner</cite></div>
       </div>
     </div>
   </section>
@@ -206,28 +278,35 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-mark">✦</span>
-        <span class="logo-text">Prana Tea</span>
-        <p>Herbal blends for the mindful life. Brewed with love in the Pacific Northwest.</p>
+        <div class="footer-logo"><span class="logo-mark">✦</span> Prana Tea</div>
+        <p>Small-batch herbal blends for the mindful life.<br/>Brewed with love in the Pacific Northwest.</p>
+        <div class="footer-socials"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
       </div>
-      <div class="footer-links">
-        <h5>Explore</h5>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="store.html">Shop</a>
-      </div>
-      <div class="footer-links">
-        <h5>Connect</h5>
-        <a href="#">Instagram</a>
-        <a href="#">Pinterest</a>
-        <a href="#">Newsletter</a>
+      <div class="footer-col"><h5>Shop</h5><a href="store.html#herbal">Herbal Teas</a><a href="store.html#adaptogen">Adaptogens</a><a href="store.html#green">Green Teas</a><a href="store.html#floral">Floral Teas</a><a href="store.html#bundles">Bundles</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">Our Story</a><a href="#">Sustainability</a><a href="#">Wholesale</a><a href="#">Contact</a></div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Tea wisdom, rituals &amp; new blends — straight to your inbox.</p>
+        <div class="newsletter-form"><input type="email" placeholder="your@email.com" /><button>→</button></div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Prana Tea · All rights reserved · levelsetexpectations.com</p>
-    </div>
+    <div class="footer-bottom"><p>© 2026 Prana Tea · All rights reserved · levelsetexpectations.com</p></div>
   </footer>
 
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header"><h3>Your Cart</h3><button class="cart-close" id="cartClose">✕</button></div>
+    <div class="cart-items" id="cartItems"><p class="cart-empty">Your cart is empty.<br/>Add a blend to begin your ritual.</p></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+      <button class="btn btn-dark full-width" onclick="checkout()">Proceed to Checkout</button>
+      <p class="cart-note">Free shipping over $50 · Secure checkout</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+
   <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
 </body>
 </html>

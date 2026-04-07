@@ -1,88 +1,76 @@
 /* =============================================
-   PRANA TEA — cart.js
-   Shopping cart with localStorage persistence
+   PRANA TEA — cart.js v2
    ============================================= */
 
 (function () {
   'use strict';
 
-  /* ---------- State ---------- */
   let cart = loadCart();
-  const quantities = { sunrise: 1, savasana: 1, thirdeye: 1, heart: 1 };
 
   const ICONS = {
-    'Sunrise Flow':      '☀️',
-    'Deep Savasana':     '🌙',
-    'Third Eye Clarity': '🔮',
-    'Heart Chakra':      '💚',
+    'Sunrise Flow':          '☀️',
+    'Deep Savasana':         '🌙',
+    'Third Eye Clarity':     '🔮',
+    'Heart Chakra':          '💚',
+    'Root Grounding':        '🌱',
+    'Reishi Rest':           '🍄',
+    'Jade Tranquility':      '🍃',
+    'Sencha Flow':           '🌿',
+    'Petal Meditation':      '🌸',
+    'Fire Within':           '🔥',
+    'Starter Ritual Bundle': '🎁',
+    'Complete Yoga Set Bundle': '✨',
+    'Chakra Collection Bundle': '🌈',
   };
 
-  /* ---------- Storage helpers ---------- */
   function loadCart() {
-    try {
-      return JSON.parse(localStorage.getItem('pranaTea_cart') || '[]');
-    } catch (e) {
-      return [];
-    }
+    try { return JSON.parse(localStorage.getItem('pranaTea_cart_v2') || '[]'); }
+    catch { return []; }
   }
 
   function saveCart() {
-    try {
-      localStorage.setItem('pranaTea_cart', JSON.stringify(cart));
-    } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem('pranaTea_cart_v2', JSON.stringify(cart)); }
+    catch {}
   }
 
-  /* ---------- Quantity selector ---------- */
-  window.changeQty = function (key, delta) {
-    quantities[key] = Math.max(1, (quantities[key] || 1) + delta);
-    const el = document.getElementById('qty-' + key);
-    if (el) el.textContent = quantities[key];
-  };
-
-  /* ---------- Add to Cart ---------- */
   window.addToCart = function (name, price, key) {
-    const qty = quantities[key] || 1;
-    const existing = cart.find(item => item.name === name);
+    const existing = cart.find(i => i.name === name);
     if (existing) {
-      existing.qty += qty;
+      existing.qty += 1;
     } else {
-      cart.push({ name, price, qty });
+      cart.push({ name, price, qty: 1 });
     }
     saveCart();
     updateCartUI();
-    showToast(`✦ ${name} added to your ritual`);
+    showToast(`✦ ${name} added`);
     openCart();
   };
 
-  /* ---------- Remove from cart ---------- */
   window.removeFromCart = function (name) {
-    cart = cart.filter(item => item.name !== name);
+    cart = cart.filter(i => i.name !== name);
     saveCart();
     updateCartUI();
   };
 
-  /* ---------- Update all cart UI ---------- */
   function updateCartUI() {
-    const badge    = document.getElementById('cartBadge');
-    const itemsEl  = document.getElementById('cartItems');
-    const footerEl = document.getElementById('cartFooter');
-    const totalEl  = document.getElementById('cartTotal');
+    const badge   = document.getElementById('cartBadge');
+    const itemsEl = document.getElementById('cartItems');
+    const footer  = document.getElementById('cartFooter');
+    const totalEl = document.getElementById('cartTotal');
 
-    const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
-    const totalAmt = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+    const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+    const totalAmt = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
     if (badge) {
       badge.textContent = totalQty;
-      // Animate badge
-      badge.style.transform = 'scale(1.4)';
+      badge.style.transform = 'scale(1.5)';
       setTimeout(() => { badge.style.transform = 'scale(1)'; }, 200);
     }
 
     if (itemsEl) {
-      if (cart.length === 0) {
-        itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.<br/>Add a blend to begin your ritual.</p>';
-      } else {
-        itemsEl.innerHTML = cart.map(item => `
+      itemsEl.innerHTML = cart.length === 0
+        ? '<p class="cart-empty">Your cart is empty.<br/>Add a blend to begin your ritual.</p>'
+        : cart.map(item => `
           <div class="cart-item">
             <div class="cart-item-icon">${ICONS[item.name] || '🍵'}</div>
             <div class="cart-item-info">
@@ -91,21 +79,13 @@
               <div class="cart-item-qty">Qty: ${item.qty}</div>
             </div>
             <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">✕</button>
-          </div>
-        `).join('');
-      }
+          </div>`).join('');
     }
 
-    if (footerEl) {
-      footerEl.style.display = cart.length > 0 ? 'flex' : 'none';
-    }
-
-    if (totalEl) {
-      totalEl.textContent = '$' + totalAmt.toFixed(2);
-    }
+    if (footer) footer.style.display = cart.length > 0 ? 'flex' : 'none';
+    if (totalEl) totalEl.textContent = '$' + totalAmt.toFixed(2);
   }
 
-  /* ---------- Open / close cart ---------- */
   function openCart() {
     document.getElementById('cartSidebar')?.classList.add('open');
     document.getElementById('cartOverlay')?.classList.add('active');
@@ -118,7 +98,6 @@
     document.body.style.overflow = '';
   }
 
-  /* ---------- Toast ---------- */
   let toastTimer;
   function showToast(msg) {
     const toast = document.getElementById('toast');
@@ -126,34 +105,23 @@
     toast.textContent = msg;
     toast.classList.add('show');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
   }
 
-  /* ---------- Checkout placeholder ---------- */
   window.checkout = function () {
-    if (cart.length === 0) return;
+    if (!cart.length) return;
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
     alert(
-      '🛒 Thank you for your order!\n\n' +
+      '🛒 Order Summary\n\n' +
       cart.map(i => `• ${i.name} ×${i.qty}  $${(i.price * i.qty).toFixed(2)}`).join('\n') +
-      '\n\n──────────────\n' +
-      `Total: $${total.toFixed(2)}\n\n` +
-      'In a live store, this would connect to Stripe, PayPal, or your preferred payment provider.'
+      `\n\n──────────────\nTotal: $${total.toFixed(2)}\n\nIn a live store this connects to your payment provider.`
     );
   };
 
-  /* ---------- Event listeners ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
-
     document.getElementById('cartClose')?.addEventListener('click', closeCart);
     document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
-
-    // Cart icon in nav opens cart if items exist
-    document.querySelector('.cart-icon-btn')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (cart.length > 0) openCart();
-    });
   });
 
 })();
