@@ -136,6 +136,12 @@ em { font-style: italic; color: var(--blue-deep); }
   overflow: hidden;
   padding: 10px 0;
   white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  height: 38px;
 }
 .announce-track {
   display: inline-flex;
@@ -162,8 +168,9 @@ em { font-style: italic; color: var(--blue-deep); }
    ============================================= */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
+  top: 38px;
+  left: 0; right: 0;
+  z-index: 400;
   background: rgba(250, 250, 248, 0.97);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -304,7 +311,7 @@ em { font-style: italic; color: var(--blue-deep); }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
-  z-index: 200;
+  z-index: 500;
 }
 .mega-menu.open {
   opacity: 1;
@@ -409,7 +416,9 @@ em { font-style: italic; color: var(--blue-deep); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  padding-top: 108px; /* header + announce */
+  padding-top: 106px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-left {
@@ -441,10 +450,11 @@ em { font-style: italic; color: var(--blue-deep); }
   justify-content: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* CSS Tea Tins */
-.hero-product-scene { position: relative; width: 340px; height: 420px; }
+.hero-product-scene { position: relative; width: 340px; height: 420px; flex-shrink: 0; }
 
 .tin {
   position: absolute;
@@ -454,6 +464,7 @@ em { font-style: italic; color: var(--blue-deep); }
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   transition: transform 0.6s var(--ease);
+  background: #5A8060;
 }
 
 .tin-main {
@@ -652,7 +663,7 @@ em { font-style: italic; color: var(--blue-deep); }
    PAGE HERO (inner pages)
    ============================================= */
 .page-hero {
-  padding: 160px 2rem 80px;
+  padding: 180px 2rem 80px;
   text-align: center;
   background: linear-gradient(165deg, var(--off-white) 0%, var(--blue-pale) 50%, var(--cream) 100%);
 }
@@ -665,7 +676,7 @@ em { font-style: italic; color: var(--blue-deep); }
    ============================================= */
 .filter-bar {
   position: sticky;
-  top: 68px;
+  top: 106px;
   z-index: 90;
   background: var(--white);
   border-bottom: 1px solid var(--warm-grey);
